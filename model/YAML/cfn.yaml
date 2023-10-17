@@ -1,0 +1,95 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: "Converter\nSAM Template for a function to convert an Amazon SageMaker\
+  \ GroundTruth NER augmented manifest to the Amazon Comprehend format.\n"
+Parameters:
+  AccountId:
+    Description: "12-digit AWS account id. Default is default. NOTE: 'sam local ...'\
+      \ must use --parameter-overrides to specify a valid one."
+    Type: String
+    Default: default
+  BucketName:
+    Description: Name of a new S3 bucket to create. Default is gtner-blog.
+    Type: String
+    Default: gtner-blog
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterLabels:
+      #AccountId:
+      #  default: 12-digit AWS account id (or "default")
+      BucketName:
+        default: S3 Bucket Name
+    ParameterGroups:
+    - Label:
+        default: General
+      Parameters:
+      - BucketName
+      #- AccountId
+Conditions:
+  SamLocal:
+    Fn::Not:
+    - Fn::Equals:
+      - Ref: AccountId
+      - default
+Globals:
+  Function:
+    Timeout: 900
+    MemorySize: 3008
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName:
+        Ref: BucketName
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        IgnorePublicAcls: true
+        BlockPublicPolicy: true
+        RestrictPublicBuckets: true
+  S3fsP38Layer:
+    Type: AWS::Lambda::LayerVersion
+    Properties:
+      CompatibleRuntimes:
+      - python3.8
+      Content:
+        S3Bucket: aws-ml-blog
+        S3Key: artifacts/blog-groundtruth-comprehend-ner/lambda-layer-s3fs-p38.zip
+      Description: s3fs-0.4.2 and boto3_stubs[s3]-1.13.16.0
+      LicenseInfo: MIT
+  ConverterFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://aws-ml-blog/artifacts/blog-groundtruth-comprehend-ner/cfn/538e83a8370f2f3e49220b2a68d5faa3
+      Handler: app.lambda_handler
+      Runtime: python3.8
+      Layers:
+      - Ref: S3fsP38Layer
+      Policies:
+      - S3FullAccessPolicy:
+          BucketName:
+            Ref: BucketName
+      Events:
+        NewAugmentedManifestEvent:
+          Type: S3
+          Properties:
+            Bucket:
+              Ref: S3Bucket
+            Events: s3:ObjectCreated:*
+            Filter:
+              S3Key:
+                Rules:
+                - Name: suffix
+                  Value: manifests/output/output.manifest
+Outputs:
+  ConverterFunction:
+    Description: Converter Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - ConverterFunction
+      - Arn
+  ConverterFunctionIamRole:
+    Description: Implicit IAM Role created for Converter function
+    Value:
+      Fn::GetAtt:
+      - ConverterFunctionRole
+      - Arn

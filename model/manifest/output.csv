@@ -1,0 +1,93 @@
+File,Line,Begin Offset,End Offset,Type
+output.txt,0,15,27,RESOLUTION
+output.txt,2,14,32,DATE
+output.txt,5,37,52,RESOLUTION
+output.txt,5,53,69,RESOLUTION
+output.txt,12,0,18,TYPE
+output.txt,12,22,37,RESOLUTION
+output.txt,15,17,29,RESOLUTION
+output.txt,18,42,77,MOTIVO
+output.txt,24,50,64,AMOUNT
+output.txt,29,37,52,RESOLUTION
+output.txt,32,55,69,AMOUNT
+output.txt,33,22,37,RESOLUTION
+output.txt,33,73,88,RESOLUTION
+output.txt,47,13,59,DEPARTMENT
+output.txt,59,0,44,AWARDED COMPANY
+output.txt,61,17,72,AWARDED COMPANY
+output.txt,63,10,22,AMOUNT
+output.txt,63,27,63,AWARDED COMPANY
+output.txt,64,55,67,AMOUNT
+output.txt,64,72,109,AWARDED COMPANY
+output.txt,66,0,14,AMOUNT
+output.txt,66,19,54,AWARDED COMPANY
+output.txt,68,18,33,AMOUNT
+output.txt,72,78,154,DEPARTMENT
+output.txt,75,67,143,DEPARTMENT
+output.txt,88,0,49,MOTIVO
+output.txt,89,0,55,MOTIVO
+output.txt,90,0,52,MOTIVO
+output.txt,91,0,45,MOTIVO
+output.txt,91,57,70,AWARDED COMPANY
+output.txt,93,11,68,MOTIVO
+output.txt,94,11,67,MOTIVO
+output.txt,95,11,66,MOTIVO
+output.txt,96,11,64,MOTIVO
+output.txt,98,20,32,AWARDED COMPANY
+output.txt,99,0,34,MOTIVO
+output.txt,99,46,59,AWARDED COMPANY
+output.txt,105,52,72,MOTIVO
+output.txt,106,0,27,MOTIVO
+output.txt,106,59,67,MOTIVO
+output.txt,106,33,47,AWARDED COMPANY
+output.txt,107,0,43,MOTIVO
+output.txt,107,48,60,AWARDED COMPANY
+output.txt,108,0,13,AWARDED COMPANY
+output.txt,108,26,70,MOTIVO
+output.txt,109,0,12,MOTIVO
+output.txt,109,60,68,MOTIVO
+output.txt,109,17,30,AWARDED COMPANY
+output.txt,109,34,49,AWARDED COMPANY
+output.txt,110,0,47,MOTIVO
+output.txt,110,52,65,AWARDED COMPANY
+output.txt,111,0,14,AWARDED COMPANY
+output.txt,111,27,69,MOTIVO
+output.txt,112,0,21,MOTIVO
+output.txt,112,26,39,AWARDED COMPANY
+output.txt,112,44,59,AWARDED COMPANY
+output.txt,113,0,55,MOTIVO
+output.txt,113,60,67,AWARDED COMPANY
+output.txt,114,0,7,AWARDED COMPANY
+output.txt,114,11,23,AWARDED COMPANY
+output.txt,114,35,70,MOTIVO
+output.txt,115,0,24,MOTIVO
+output.txt,115,28,40,AWARDED COMPANY
+output.txt,115,46,60,AWARDED COMPANY
+output.txt,116,0,52,MOTIVO
+output.txt,116,58,65,AWARDED COMPANY
+output.txt,117,0,6,AWARDED COMPANY
+output.txt,117,11,23,AWARDED COMPANY
+output.txt,117,35,70,MOTIVO
+output.txt,118,0,21,MOTIVO
+output.txt,118,26,38,AWARDED COMPANY
+output.txt,118,43,57,AWARDED COMPANY
+output.txt,119,0,46,MOTIVO
+output.txt,119,51,65,AWARDED COMPANY
+output.txt,120,0,12,AWARDED COMPANY
+output.txt,120,25,60,MOTIVO
+output.txt,121,0,19,MOTIVO
+output.txt,121,24,38,AWARDED COMPANY
+output.txt,121,43,54,AWARDED COMPANY
+output.txt,123,26,47,AWARDED COMPANY
+output.txt,123,48,64,AWARDED COMPANY
+output.txt,124,0,15,AWARDED COMPANY
+output.txt,124,18,38,AWARDED COMPANY
+output.txt,139,42,55,AMOUNT
+output.txt,155,28,46,TYPE
+output.txt,155,51,66,RESOLUTION
+output.txt,161,55,83,MOTIVO
+output.txt,163,45,63,TYPE
+output.txt,163,67,83,RESOLUTION
+output.txt,166,53,66,AMOUNT
+output.txt,176,0,27,AWARDED COMPANY
+output.txt,176,30,50,AWARDED COMPANY
