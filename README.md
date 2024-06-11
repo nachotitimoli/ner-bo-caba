@@ -1,4 +1,4 @@
-# BO_CABA
+# Olympians
 
 Implementación de un modelo NER con servicios de AWS para reconocer entidades dentro de Boletines Oficiales de la CABA.
 
